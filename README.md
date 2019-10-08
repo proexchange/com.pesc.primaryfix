@@ -1,44 +1,24 @@
 # com.pesc.primaryfix
 
-![Screenshot](/images/screenshot.png)
-
-(*FIXME: In one or two paragraphs, describe what the extension does and why one would download it. *)
-
 The extension is licensed under [AGPL-3.0](LICENSE.txt).
 
 ## Requirements
 
 * PHP v5.6+
-* CiviCRM (*FIXME: Version number*)
-
-## Installation (Web UI)
-
-This extension has not yet been published for installation via the web UI.
-
-## Installation (CLI, Zip)
-
-Sysadmins and developers may download the `.zip` file for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
-
-```bash
-cd <extension-dir>
-cv dl com.pesc.primaryfix@https://github.com/FIXME/com.pesc.primaryfix/archive/master.zip
-```
-
-## Installation (CLI, Git)
-
-Sysadmins and developers may clone the [Git](https://en.wikipedia.org/wiki/Git) repo for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
-
-```bash
-git clone https://github.com/FIXME/com.pesc.primaryfix.git
-cv en primaryfix
-```
+* CiviCRM v5.0+
 
 ## Usage
 
-(* FIXME: Where would a new user navigate to get started? What changes would they see? *)
+Fixes a contact's related records (phone,email,address) when none, or more than one are set to primary. Creates a new API entity 'Primaryfix' and action 'fix', can accept a single contact ID 'cid' or none to process all contacts. On installation adds a new daily schedueld job.  
 
-## Known Issues
+```
+//  Process all contacts
+$result = civicrm_api3('Primaryfix', 'fix');
 
-(* FIXME *)
+
+'//  Process one contact
+$result = civicrm_api3('Primaryfix', 'fix', [
+  'cid' => 123,
+]);
+
+```
