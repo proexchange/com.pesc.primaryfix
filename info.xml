@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<extension key="com.pesc.primaryfix" type="module">
+  <file>primaryfix</file>
+  <name>Primary Record Fixer</name>
+  <description>Fixes a contact's related records (phone,email,address) when none, or more than one are set to primary</description>
+  <license>AGPL-3.0</license>
+  <releaseDate>2019-10-07</releaseDate>
+  <version>1.0</version>
+  <develStage>beta</develStage>
+  <compatibility>
+    <ver>5.0</ver>
+  </compatibility>
+  <civix>
+    <namespace>CRM/Primaryfix</namespace>
+  </civix>
+</extension>
